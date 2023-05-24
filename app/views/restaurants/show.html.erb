@@ -1,0 +1,14 @@
+<div class="container">
+    <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary' %>
+
+  <!-- Show the reviews -->
+
+  <%= link_to 'See all restaurants', restaurants_path, class: 'btn btn-primary' %>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-primary' %>
+  <%= link_to 'Delete', restaurant_path(@restaurant), data: { turbo_method: :delete, turbo_confirm: 'Do you want to delete?' }, class: 'btn btn-primary' %>
+</div>
